@@ -11,6 +11,7 @@
 	{{- end }}
 	{{- partial "structured-data.html" . }}
 	{{- partial "favicons.html" }}
+	{{ partial "seo.html" . }}
 	<title>{{.Title}}</title>
 	{{ range .AlternativeOutputFormats -}}
 		{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Title | safeHTML }}
@@ -24,6 +25,7 @@
 	{{- if templates.Exists "partials/extra-head.html" -}}
 	{{ partial "extra-head.html" . }}
 	{{- end }}
+	{{ partial "math.html" . }}
 </head>
 
 <body id="page">
