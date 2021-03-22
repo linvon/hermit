@@ -48,12 +48,7 @@
 				{{- end }}
 			</footer>
 		</article>
-		{{- if .Params.toc }}
-		<aside id="toc">
-			<div class="toc-title">{{ i18n "tableOfContents" }}</div>
-			{{ .TableOfContents }}
-		</aside>
-		{{- end }}
+                {{- partial "toc.html" . -}}
 		<div class="post-nav thin">
 			{{- with .NextInSection }}
 			<a class="next-post" href="{{ .Permalink }}">
